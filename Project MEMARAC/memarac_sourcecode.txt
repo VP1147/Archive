@@ -1,0 +1,541 @@
+/*
+MEMARAC 2.0
+Vinnicius Pavao
+January 2018
+*/
+#include <conio.h>
+#include <iostream>
+#include <cmath>
+#include <windows.h>
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+using namespace std;
+int main()
+{
+	menustart:
+	int start;
+	cout<<"MEMARAC 2.0\n\n";
+	cout<<"1-Classic Mode\n2-Pontuation Mode\n3-Arcade Mode\n";
+	cin>>start;
+	switch (start)
+	{
+		default:
+			{
+				system(" ");
+				cout<<"Invalid option\n";
+				system("pause");
+				system(" ");
+				goto menustart;
+			}
+		case 1:
+		{
+				{
+		system(" ");
+		int max;
+		int x;
+		int y;
+		int z;
+		int gmenu;
+		int end;
+		cout<<"Insert the type of questions:\n";
+		cout<<"1-Addiction\n2-Subtraction\n3-Multiplication\n4-Division\n";
+		cout<<"5-Potenciation\n6-Root\n7-Random\n8-RETURN TO MENU\n";
+		cin>>gmenu;
+		if (gmenu == 8)
+		{
+			system(" ");
+			goto menustart;
+		}
+		system(" ");
+		cout<<"Max number size:";
+		cin>>max;
+		system(" ");
+		switch (gmenu)
+		{
+					case 1:
+			{
+										while (end == 0)
+		{
+			srand((unsigned)time(NULL));
+		x = rand() % max;
+		y = rand() % max;
+		cout<<x<<"+"<<y<<"\n";
+		cin>>z;
+		if (z == x + y)
+		{
+			cout<<"Correct\n";
+		}
+		else
+		{
+			cout<<"Wrong\n";
+		}
+		if (z == 1234567890)
+		{
+			system (" ");
+			goto menustart;
+		}
+		
+		
+		}
+			}
+			
+			case 2:
+				{
+											while (end == 0)
+		{
+			srand((unsigned)time(NULL));
+		x = rand() % max;
+		y = rand() % max;
+		cout<<x<<"-"<<y<<"\n";
+		cin>>z;
+		if (z == x - y)
+		{
+			cout<<"Correct\n";
+		}
+		else
+		{
+			cout<<"Wrong\n";
+		}
+		if (z == 1234567890)
+		{
+			system (" ");
+			goto menustart;
+		}
+		
+		
+		}
+				}
+		case 3:
+			{
+										while (end == 0)
+		{
+			srand((unsigned)time(NULL));
+		x = rand() % max;
+		y = rand() % max;
+		cout<<x<<"x"<<y<<"\n";
+		cin>>z;
+		if (z == x * y)
+		{
+			cout<<"Correct\n";
+		}
+		else
+		{
+			cout<<"Wrong\n";
+		}
+		if (z == 1234567890)
+		{
+			system (" ");
+			goto menustart;
+		}
+		
+		
+		}
+			}
+
+		
+		case 4:
+					{
+						while (end == 0)
+		{
+			srand((unsigned)time(NULL));
+		x = rand() % max;
+		y = rand() % max;
+		cout<<x<<"/"<<y<<"\n";
+		cin>>z;
+		if (z == x / y)
+		{
+			cout<<"Correct\n";
+		}
+		else
+		{
+			cout<<"Wrong\n";
+		}
+		if (z == 1234567890)
+		{
+			system (" ");
+			goto menustart;
+		}
+		
+		
+		}
+					}
+					case 5:
+						{
+							int vpow;
+							while (end == 0)
+		{
+			srand((unsigned)time(NULL));
+		x = rand() % max;
+		y = rand() % max;
+		vpow = rand() % 1;
+		switch(vpow)
+		{
+			case 0:
+				{
+		cout<<x<<" High squared\n";
+		cin>>z;
+		if (z == pow(x,2))
+		{
+			cout<<"Correct\n";
+		}
+		else
+		{
+			cout<<"Wrong\n";
+		}
+		if (z == 1234567890)
+		{
+			system (" ");
+			goto menustart;
+		}
+		
+		
+		}
+		    case 1:
+		    	{
+		    		cout<<x<<" Cube-High\n";
+		cin>>z;
+		if (z == pow(x,3))
+		{
+			cout<<"Correct\n";
+		}
+		else
+		{
+			cout<<"Wrong\n";
+		}
+		if (z == 1234567890)
+		{
+			system (" ");
+			goto menustart;
+		}
+		
+		
+		        }
+				}
+				}
+		}
+		        case 6:
+		        {
+		        	int vroot;
+							while (end == 0)
+		{
+			srand((unsigned)time(NULL));
+		x = rand() % max;
+		y = rand() % max;
+		vroot = rand() % 1;
+		switch(vroot)
+		{
+			case 0:
+				{
+		cout<<"Square root of "<<x<<"\n";
+		cin>>z;
+		if (z == sqrt(x))
+		{
+			cout<<"Correct\n";
+		}
+		else
+		{
+			cout<<"Wrong\n";
+		}
+		if (z == 1234567890)
+		{
+			system (" ");
+			goto menustart;
+		}
+		
+		
+		}
+		    case 1:
+		    	{
+		    		cout<<"Cubic root of "<<x<<"\n";
+		cin>>z;
+		if (z == cbrt(x))
+		{
+			cout<<"Correct\n";
+		}
+		else
+		{
+			cout<<"Wrong\n";
+		}
+		if (z == 1234567890)
+		{
+			system (" ");
+			goto menustart;
+		}
+		
+		
+		        }
+				}
+				}
+				}
+				case 7:
+					{
+					int vrandom;
+					int caseloop;
+					srand((unsigned)time(NULL));
+					vrandom = rand() % 5;
+					while(caseloop == 0)
+					{
+						switch(vrandom)
+					{
+						case 0:
+						{
+							srand((unsigned)time(NULL));
+		x = rand() % max;
+		y = rand() % max;
+		cout<<x<<"+"<<y<<"\n";
+		cin>>z;
+		if (z == x + y)
+		{
+			cout<<"Correct\n";
+		}
+		else
+		{
+			cout<<"Wrong\n";
+		}
+		if (z == 1234567890)
+		{
+			system (" ");
+			goto menustart;
+		}
+		
+		
+						}
+						case 1:
+							{
+		srand((unsigned)time(NULL));
+		x = rand() % max;
+		y = rand() % max;
+		cout<<x<<"-"<<y<<"\n";
+		cin>>z;
+		if (z == x - y)
+		{
+			cout<<"Correct\n";
+		}
+		else
+		{
+			cout<<"Wrong\n";
+		}
+		if (z == 1234567890)
+		{
+			system (" ");
+			goto menustart;
+		}
+		
+		
+		
+							}
+							case 2:
+								{
+		srand((unsigned)time(NULL));
+		x = rand() % max;
+		y = rand() % max;
+		cout<<x<<"x"<<y<<"\n";
+		cin>>z;
+		if (z == x * y)
+		{
+			cout<<"Correct\n";
+		}
+		else
+		{
+			cout<<"Wrong\n";
+		}
+		if (z == 1234567890)
+		{
+			system (" ");
+			goto menustart;
+		}
+		
+		
+								}
+								case 3:
+									{
+	    srand((unsigned)time(NULL));
+		x = rand() % max;
+		y = rand() % max;
+		cout<<x<<"/"<<y<<"\n";
+		cin>>z;
+		if (z == x / y)
+		{
+			cout<<"Correct\n";
+		}
+		else
+		{
+			cout<<"Wrong\n";
+		}
+		if (z == 1234567890)
+		{
+			system (" ");
+			goto menustart;
+		}
+		
+		
+									}
+									case 4:
+										{
+		int vpow;
+		srand((unsigned)time(NULL));
+		x = rand() % max;
+		y = rand() % max;
+		vpow = rand() % 1;
+		switch(vpow)
+		{
+			case 0:
+				{
+		cout<<x<<" High squared\n";
+		cin>>z;
+		if (z == pow(x,2))
+		{
+			cout<<"Correct\n";
+		}
+		else
+		{
+			cout<<"Wrong\n";
+		}
+		if (z == 1234567890)
+		{
+			system (" ");
+			goto menustart;
+		}
+		
+		
+		}
+		    case 1:
+		    	{
+		    		cout<<x<<" Cube-High\n";
+		cin>>z;
+		if (z == pow(x,3))
+		{
+			cout<<"Correct\n";
+		}
+		else
+		{
+			cout<<"Wrong\n";
+		}
+		if (z == 1234567890)
+		{
+			system (" ");
+			goto menustart;
+		}
+		
+		
+		        }
+				}
+										}
+										case 5:
+											{
+		int vroot;
+		srand((unsigned)time(NULL));
+		x = rand() % max;
+		y = rand() % max;
+		vroot = rand() % 1;
+		switch(vroot)
+		{
+			case 0:
+				{
+		cout<<"Square root of "<<x<<"\n";
+		cin>>z;
+		if (z == sqrt(x))
+		{
+			cout<<"Correct\n";
+		}
+		else
+		{
+			cout<<"Wrong\n";
+		}
+		if (z == 1234567890)
+		{
+			system (" ");
+			goto menustart;
+		}
+		
+		
+		}
+		    case 1:
+		    	{
+		    		cout<<"Cubic root of "<<x<<"\n";
+		cin>>z;
+		if (z == cbrt(x))
+		{
+			cout<<"Correct\n";
+		}
+		else
+		{
+			cout<<"Wrong\n";
+		}
+		if (z == 1234567890)
+		{
+			system (" ");
+			goto menustart;
+		}
+		
+		
+		        }
+}
+}
+}
+}
+}//last case
+		}
+
+					}
+					
+		}
+		case 2:
+		{
+			system(" ");
+			int x;
+			int y;
+			int z;
+			int points;
+			int gmenu2;
+			int max2;
+			int max_questions;
+			int questions;
+			cout<<"Insert the number of questions\n";
+			cout<<"Insert the type of questions:\n";
+			cout<<"1-Addiction\n";
+			switch (gmenu2)
+			{
+				default:
+					{
+						system(" ");
+						cout<<"Invalid option\n";
+						system("pause");
+						system(" ");
+						goto menustart;
+					}
+					break;
+				case 1:
+					{
+				for(questions == 0;questions <= max_questions;questions++)
+		{
+			srand((unsigned)time(NULL));
+		x = rand() % max2;
+		y = rand() % max2;
+		cout<<x<<"+"<<y<<"\n";
+		cin>>z;
+		if (z == x + y)
+		{
+			cout<<"Correct\n";
+		}
+		else
+		{
+			cout<<"Wrong\n";
+		}
+		if (z == 1234567890)
+		{
+			system (" ");
+			goto menustart;
+		}
+		
+		
+		}
+			}
+					}
+			}
+			break;
+		}
+	}
+	
