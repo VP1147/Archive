@@ -4,14 +4,13 @@
 
 const int x = 1024;
 const int y = 768;
-//const int SCREEN_FPS = 60;
+// const int SCREEN_FPS = 60;
 //const int SCREEN_TICKS_PER_FRAME = 1000 / SCREEN_FPS;
 
 SDL_Window* window = NULL;
 SDL_Renderer* renderer = NULL;
 SDL_Event event;
 
-const int Objects = { 1, 2, 3 }; // List of game objects
 void DrawPlayer(int size, int x, int y) {
 	SDL_SetRenderDrawColor(renderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
 	SDL_Rect rect;
@@ -22,7 +21,7 @@ void DrawPlayer(int size, int x, int y) {
 	SDL_RenderPresent(renderer);
 }
 
-void DrawObj(int x, int y) {
+void DrawObj(int x, int y, int id) {
 	SDL_SetRenderDrawColor(renderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
 	SDL_Rect rect;
 	rect.x = x; rect.y = y;
@@ -31,13 +30,12 @@ void DrawObj(int x, int y) {
 	SDL_RenderPresent(renderer);
 }
 
-void Gravity(int Obj) {
-	Obj.pos += 1;
-}
+// void Gravity(int Obj) {
+// 	Obj.pos += 1;
+// }
 
 int main() {
-	int posx = 50; int posy; int mousex; int mousey; bool quit = false; 
-	bool visible[1] = { false }; 
+	int posx = 50; int posy; int mousex; int mousey; bool quit = false;
 	SDL_Init(SDL_INIT_VIDEO); 	
 	window = SDL_CreateWindow("SDL tests", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, x, y, 0);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
@@ -58,18 +56,14 @@ int main() {
 						case SDLK_UP: posy-=1; break;
 						case SDLK_RIGHT: posx+=1; break;
 						case SDLK_LEFT: posx-=1; break;
-						case SDLK_RETURN: visible[0] = true; break;	
 					}
 			}
 		}
-
 		DrawPlayer(posx, mousex, y);
-		if(visible[0] == true) { DrawObj(x/2,g); g+=1; }
-		SDL_SetRenderDrawColor(renderer,0, 0, 0, SDL_ALPHA_OPAQUE);
+		DrawObj(x/2, y/2, 1);
+		SDL_SetRenderDrawColor(renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
 		SDL_RenderClear(renderer);
 		}
 	SDL_Quit();
 	return 0;
 }
-	
-
